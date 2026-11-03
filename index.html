@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 2: Налаштування приладів та елементна база схем</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background-color: #f4f4f9; color: #333; }
+        .quiz-container { max-width: 800px; margin: 0 auto; background: #fff; padding: 25px 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #2c3e50; margin-bottom: 5px; }
+        .topic { text-align: center; font-weight: bold; color: #7f8c8d; margin-bottom: 25px; }
+        .question { margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 6px; background-color: #fafafa; }
+        .question-title { font-weight: bold; margin-bottom: 10px; color: #34495e; }
+        .options label { display: block; margin-bottom: 8px; cursor: pointer; padding: 5px; border-radius: 4px; }
+        .options label:hover { background-color: #eef2f7; }
+        .options input { margin-right: 10px; }
+        .btn-submit { display: block; width: 100%; padding: 12px; font-size: 16px; font-weight: bold; color: #fff; background-color: #27ae60; border: none; border-radius: 6px; cursor: pointer; transition: background 0.3s; margin-top: 20px; }
+        .btn-submit:hover { background-color: #219150; }
+        #result-box { display: none; margin-top: 25px; padding: 20px; border-radius: 6px; background-color: #e8f8f5; border: 1px solid #a3e4d7; text-align: center; }
+        #result-box h2 { color: #16a085; margin-top: 0; }
+        .correct { background-color: #d4edda !important; color: #155724; font-weight: bold; }
+        .incorrect { background-color: #f8d7da !important; color: #721c24; }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1 id="quiz-title">Тест 2</h1>
+    <div class="topic" id="quiz-topic">Тема: Налаштування приладів та елементна база схем</div>
+
+    <form id="quizForm">
+        <div class="question" id="q1_box">
+            <div class="question-title">1. Що можна змінювати, редагуючи налаштування вимірювальних приладів?</div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> А) Тільки назву приладу на схемі</label>
+                <label><input type="radio" name="q1" value="B"> Б) Шкали приладів залежно від діапазону вимірювань, режим роботи та вид вхідних впливів</label>
+                <label><input type="radio" name="q1" value="C"> В) Колір корпусу програми</label>
+                <label><input type="radio" name="q1" value="D"> Г) Роздільну здатність екрана монітора</label>
+            </div>
+        </div>
+
+        <div class="question" id="q2_box">
+            <div class="question-title">2. Що робить функція контекстного меню «Rotate» під час роботи з елементом?</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> А) Видаляє елемент зі схеми</label>
+                <label><input type="radio" name="q2" value="B"> Б) Повертає елемент на кут, кратний 90 градусам</label>
+                <label><input type="radio" name="q2" value="C"> В) Змінює колір провідників</label>
+                <label><input type="radio" name="q2" value="D"> Г) Відкриває параметри резистора</label>
+            </div>
+        </div>
+
+        <div class="question" id="q3_box">
+            <div class="question-title">3. Який графічний символ відповідає «Заземленню» у списку джерел?</div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> А) Батарея</label>
+                <label><input type="radio" name="q3" value="B"> Б) Горизонтальні лінії різної довжини, що зменшуються донизу</label>
+                <label><input type="radio" name="q3" value="C"> В) Коло зі стрілкою всередині</label>
+                <label><input type="radio" name="q3" value="D"> Г) Джерело прямокутної форми</label>
+            </div>
+        </div>
+
+        <div class="question" id="q4_box">
+            <div class="question-title">4. Який базовий компонент відповідає за накопичення електричного заряду (ємність)?</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> А) Резистор</label>
+                <label><input type="radio" name="q4" value="B"> Б) Конденсатор</label>
+                <label><input type="radio" name="q4" value="C"> В) Котушка індуктивності</label>
+                <label><input type="radio" name="q4" value="D"> Г) Трансформатор</label>
+            </div>
+        </div>
+
+        <div class="question" id="q5_box">
+            <div class="question-title">5. Який із наведених елементів належить до категорії діодів?</div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> А) Тиристор чи диністор</label>
+                <label><input type="radio" name="q5" value="B"> Б) Електролітичний конденсатор</label>
+                <label><input type="radio" name="q5" value="C"> В) Реостат</label>
+                <label><input type="radio" name="q5" value="D"> Г) Плавний запобіжник</label>
+            </div>
+        </div>
+
+        <div class="question" id="q6_box">
+            <div class="question-title">6. Що відображає індикаторний пристрій у вигляді цифри «8» із дешифратором?</div>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> А) Вольтметр</label>
+                <label><input type="radio" name="q6" value="B"> Б) Семисегментний індикатор із дешифратором</label>
+                <label><input type="radio" name="q6" value="C"> В) Звуковий індикатор</label>
+                <label><input type="radio" name="q6" value="D"> Г) Лінійку зі світлодіодів</label>
+            </div>
+        </div>
+
+        <div class="question" id="q7_box">
+            <div class="question-title">7. Що позначає позиція 1 у наборі «Компоненти змішаного типу» (Miscellaneous)?</div>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> А) Плавний запобіжник</label>
+                <label><input type="radio" name="q7" value="B"> Б) Кварцовий резонатор</label>
+                <label><input type="radio" name="q7" value="C"> В) Електровакуумний тріод</label>
+                <label><input type="radio" name="q7" value="D"> Г) Блок заголовка</label>
+            </div>
+        </div>
+
+        <div class="question" id="q8_box">
+            <div class="question-title">8. Яку функцію виконує логічний аналізатор у наборі контрольно-вимірювальних приладів?</div>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> А) Вимірює опір</label>
+                <label><input type="radio" name="q8" value="B"> Б) Генерує слова</label>
+                <label><input type="radio" name="q8" value="C"> В) Дозволяє аналізувати логічні стани сигналів у цифрових схемах</label>
+                <label><input type="radio" name="q8" value="D"> Г) Вимірює виключно постійну напругу</label>
+            </div>
+        </div>
+
+        <div class="question" id="q9_box">
+            <div class="question-title">9. На які три основні частини поділяється лицьова панель мультиметра в Electronics Workbench?</div>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> А) Дисплей результатів, клеми для підключення та кнопки управління</label>
+                <label><input type="radio" name="q9" value="B"> Б) Тільки тумблер живлення та шкала стрілки</label>
+                <label><input type="radio" name="q9" value="C"> В) Регулятор гучності та перемикач мови</label>
+                <label><input type="radio" name="q9" value="D"> Г) Меню файлів, редагування та довідки</label>
+            </div>
+        </div>
+
+        <div class="question" id="q10_box">
+            <div class="question-title">10. Яка стандартна еталонна напруга V1 встановлюється за замовчуванням для параметра «Decibel standard» у мультиметрі?</div>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> А) V1 = 5 В</label>
+                <label><input type="radio" name="q10" value="B"> Б) V1 = 12 В</label>
+                <label><input type="radio" name="q10" value="C"> В) V1 = 1 В</label>
+                <label><input type="radio" name="q10" value="D"> Г) V1 = 220 В</label>
+            </div>
+        </div>
+
+        <button type="button" class="btn-submit" onclick="checkAnswers()">Перевірити результат</button>
+    </form>
+
+    <div id="result-box">
+        <h2>Результати тестування</h2>
+        <p><strong>Тема тесту:</strong> <span id="res-topic"></span></p>
+        <p><strong>Правильних відповідей:</strong> <span id="res-score"></span> з 10</p>
+        <p><strong>Відсоток успішності:</strong> <span id="res-percent" style="font-size: 20px; font-weight: bold; color: #27ae60;"></span></p>
+    </div>
+</div>
+
+<script>
+    const correctAnswers = {
+        q1: "B", q2: "B", q3: "B", q4: "B", q5: "A",
+        q6: "B", q7: "A", q8: "C", q9: "A", q10: "C"
+    };
+
+    function checkAnswers() {
+        let score = 0;
+        const total = 10;
+        const form = document.getElementById('quizForm');
+
+        for (let i = 1; i <= total; i++) {
+            const qName = 'q' + i;
+            const selected = form.elements[qName].value;
+            const correct = correctAnswers[qName];
+            const options = form.elements[qName];
+
+            for (let option of options) {
+                const label = option.parentElement;
+                label.classList.remove('correct', 'incorrect');
+                if (option.value === correct) {
+                    label.classList.add('correct');
+                } else if (option.checked && option.value !== correct) {
+                    label.classList.add('incorrect');
+                }
+            }
+
+            if (selected === correct) {
+                score++;
+            }
+        }
+
+        const percentage = Math.round((score / total) * 100);
+        document.getElementById('res-topic').innerText = document.getElementById('quiz-topic').innerText.replace("Тема: ", "");
+        document.getElementById('res-score').innerText = score;
+        document.getElementById('res-percent').innerText = percentage + "%";
+        document.getElementById('result-box').style.display = 'block';
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
